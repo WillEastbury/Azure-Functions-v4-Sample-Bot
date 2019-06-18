@@ -1,0 +1,24 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+
+    "MicrosoftAppId": "sample",
+    "MicrosoftAppPassword": "sample",
+
+    "CosmosDBEndpoint": "https://sample.documents.azure.com:443/",
+    "CosmosAuthKey": "sample",
+    "CosmosCollectionId": "botstate",
+    "CosmosDatabaseId": "botstate",
+
+    "GameFile": "/GameData.json",
+
+    "DirectLineSecret": "sample",
+    "DirectLineConversationEndpoint": "https://directline.botframework.com/v3/directline/conversations",
+
+    "CognitiveSecret": "sample",
+    "CognitiveTokenEndpoint": "https://{region}.api.cognitive.microsoft.com/sts/v1.0/issueToken"
+  }
+}
