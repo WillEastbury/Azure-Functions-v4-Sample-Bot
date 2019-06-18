@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AzureFunctionsVersion>v2</AzureFunctionsVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="GameData.json" />
+    <None Remove="proxies.json" />
+    <None Remove="ServeContent\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GameData.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Functions.Extensions" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Azure.KeyVault.Core" Version="3.0.3" />
+    <PackageReference Include="Microsoft.Bot.Builder" Version="4.4.5" />
+    <PackageReference Include="Microsoft.Bot.Builder.Azure" Version="4.4.5" />
+    <PackageReference Include="Microsoft.Bot.Builder.Dialogs" Version="4.4.5" />
+    <PackageReference Include="Microsoft.Bot.Builder.Integration.AspNet.Core" Version="4.4.5" />
+    <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="5.4.0" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.29" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ServeContent\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="proxies.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="host.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="local.settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+</Project>

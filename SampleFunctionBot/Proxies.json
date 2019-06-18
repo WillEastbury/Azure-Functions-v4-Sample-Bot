@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json.schemastore.org/proxies",
+  "proxies": {
+    "proxy1": {
+      "matchCondition": {
+        "methods": [ "GET" ],
+        "route": "/"
+      },
+      "backendUri": "https://localhost/api/chatclient"
+    }
+  }
+}

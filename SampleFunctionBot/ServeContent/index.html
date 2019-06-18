@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Your Bot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+    <style>
+
+        html, body {
+
+            height: 100%;
+        }
+
+        body {
+
+            margin: 0
+        }
+
+        #webchat {
+
+            height: 95%;
+            width: 100%;
+        }
+
+        #banner {
+            height: 5%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand display-4" href="#">Your Bot</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="btn btn-warning" href="https://docs.microsoft.com/en-us/azure/bot-service/?view=azure-bot-service-4.0">Azure Bot Service Docs</a>
+                    <a class="btn btn-success" href="https://github.com/microsoft/botframework-sdk">Github BotBuilder Repo</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="webchat" role="main" />
+    <script>
+        (async function () {
+
+            const res = await fetch('/api/directlinetoken', { method: 'POST' });
+            const { token } = await res.json();
+
+            const res2 = await fetch('/api/cognitivetoken', { method: 'POST' });
+            const { token: authorizationToken } = await res2.json();
+            const region = 'uksouth';
+
+            const wspff = await window.WebChat.createCognitiveServicesSpeechServicesPonyfillFactory(
+                { authorizationToken, region }
+            );
+
+            const ss = window.WebChat.createStyleSet(
+                {
+
+                    bubbleBackground: '#FFFFFF',
+                    bubbleBorderRadius: 5,
+                    bubbleTextColor: 'Black',
+                    bubbleFromUserBackground: '#3a8dde',
+                    bubbleFromUserBorderRadius: 5,
+                    bubbleFromUserTextColor: 'White'
+
+                });
+
+            window.WebChat.renderWebChat({
+
+                directLine: window.WebChat.createDirectLine({ token }),
+                username: 'You',
+                locale: 'en-GB',
+                webSpeechPonyfillFactory: wspff,
+                styleSet: ss,
+                textNormalization: 'lexical'
+
+            }, document.getElementById('webchat'));
+
+            document.querySelector('#webchat > *').focus();
+
+        })().catch(err => console.error(err));
+
+    </script>
+</body>
+</html>

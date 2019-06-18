@@ -1,0 +1,48 @@
+{
+  "Games": [
+    {
+      "GameName": "Real Words",
+      "GameType": "Phonics",
+      "GameStepText": "How do you say",
+      "QuestionList": [
+        "zoo",
+        "coin",
+        "photo",
+        "cloud",
+        "skate",
+        "whip",
+        "oyster",
+        "straw",
+        "first"
+      ]
+    },
+    {
+      "GameName": "Number Addition",
+      "GameStepText": "What is",
+      "GameType": "Maths",
+      "QuestionList": [
+        "1 + 1",
+        "2 + 4",
+        "3 + 7",
+        "5 + 3",
+        "12 + 11",
+        "19 + 6"
+      ]
+    },
+    {
+      "GameName": "Number Subtraction",
+      "GameType": "Maths",
+      "GameStepText": "What is",
+      "QuestionList": [
+        "1 - 1",
+        "21 - 12",
+        "12 - 3",
+        "6 - 2",
+        "9 - 5",
+        "8 - 5",
+        "100 - 100",
+        "50 - 1"
+      ]
+    }
+  ]
+}
