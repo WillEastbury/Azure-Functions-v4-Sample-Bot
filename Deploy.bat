@@ -2,9 +2,10 @@ set ResGrpName=%1
 set ResLocation=%2
 set botappname=%3
 set botpswd=%4
+set azrsub=%5
 
-az login
-az 
+az login 
+az account set --subscription "%azrsub%"
 
 az group create --name %ResGrpName% --location %ResLocation%
 az storage account create --resource-group $ENV:ResGrpName --name %botappname% --https-only -l %ResLocation%
