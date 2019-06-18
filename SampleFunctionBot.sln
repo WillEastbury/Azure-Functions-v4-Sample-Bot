@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleFunctionBot", "SampleFunctionBot\SampleFunctionBot.csproj", "{6444568C-DECA-4DC1-8225-6DB12589BE51}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deploy", "Deploy", "{BF856BD2-F94C-4BD0-AB35-A90E36AEFB99}"
+	ProjectSection(SolutionItems) = preProject
+		Deploy.bat = Deploy.bat
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
