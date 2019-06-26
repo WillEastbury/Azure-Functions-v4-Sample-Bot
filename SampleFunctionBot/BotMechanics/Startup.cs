@@ -38,11 +38,7 @@ namespace SampleFunctionBot
             ));
 
             builder.Services.AddSingleton<IBotFrameworkHttpAdapter>(e => BindToAdapter(e));
-
-            builder.Services.AddSingleton<IStorage>(e => new MemoryStorage());
-
-            // OR -- it's recommended  to use cosmosDB for the state store to make the bot stateless
-            
+            builder.Services.AddSingleton<IStorage>(e=> new MemoryStorage());
             //builder.Services.AddSingleton<IStorage>(e => new CosmosDbStorage(
             //new CosmosDbStorageOptions()
             //{   CosmosDBEndpoint = new Uri(Environment.GetEnvironmentVariable("CosmosDBEndpoint")),

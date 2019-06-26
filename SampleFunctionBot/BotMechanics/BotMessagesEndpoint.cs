@@ -58,6 +58,8 @@ namespace SampleFunctionBot
         [FunctionName("directlinetoken")]
         public async Task<IActionResult> RunAsyncToken([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = "directlinetoken")] HttpRequest req, ILogger log)
         {
+            log.LogInformation("Enttering RunAsyncToken");
+
             var pp = new PostPayload()
             {
                 user = new User()

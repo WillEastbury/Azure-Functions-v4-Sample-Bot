@@ -14,12 +14,11 @@
     "CosmosDatabaseId": "botstate",
 
     "GameFile": ".\\GameData.json",
-    "IndexFile": ".\\ServeContent\\Index.html",
 
     "DirectLineSecret": "JB_3jBtCjKo.LN3bBnpJNOyUeq7V4yeRrP-hIesOqOIxDpjqVRjrX9U",
 
     "DirectLineConversationEndpoint": "https://directline.botframework.com/v3/directline/conversations",
-    "indexFile": ".\\ServeContent\\index.html",
+
     "CognitiveSecret": "sample",
     "CognitiveTokenEndpoint": "https://{region}.api.cognitive.microsoft.com/sts/v1.0/issueToken"
   }
