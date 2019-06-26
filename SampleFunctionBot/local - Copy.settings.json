@@ -5,8 +5,8 @@
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet",
 
-    "MicrosoftAppId": "10f2a84a-9fe2-4982-a1df-8240f528fbe2",
-    "MicrosoftAppPassword": ".Qkik(8;pMm5=IIvSwy[vy3@u1|X",
+    "MicrosoftAppId": "..",
+    "MicrosoftAppPassword": "..",
 
     "CosmosDBEndpoint": "https://sample.documents.azure.com:443/",
     "CosmosAuthKey": "sample",
@@ -15,7 +15,7 @@
 
     "GameFile": ".\\GameData.json",
 
-    "DirectLineSecret": "JB_3jBtCjKo.LN3bBnpJNOyUeq7V4yeRrP-hIesOqOIxDpjqVRjrX9U",
+    "DirectLineSecret": "..",
 
     "DirectLineConversationEndpoint": "https://directline.botframework.com/v3/directline/conversations",
 

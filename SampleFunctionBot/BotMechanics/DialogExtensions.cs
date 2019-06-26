@@ -30,7 +30,6 @@ namespace SampleFunctionBot
         }
     }
 
-
     /// <summary>
     /// Some extension methods to wrap common dialog activities
     /// </summary>
@@ -218,6 +217,7 @@ namespace SampleFunctionBot
         }
 
     }
+
     public static class FoundChoiceExtensions
     {
 
