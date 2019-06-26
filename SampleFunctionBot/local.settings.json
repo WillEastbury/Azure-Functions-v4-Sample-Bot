@@ -13,7 +13,7 @@
     "CosmosCollectionId": "botstate",
     "CosmosDatabaseId": "botstate",
 
-    "GameFile": "/GameData.json",
+    "GameFile": ".\\GameData.json",
 
     "DirectLineSecret": "sample",
     "DirectLineConversationEndpoint": "https://directline.botframework.com/v3/directline/conversations",
