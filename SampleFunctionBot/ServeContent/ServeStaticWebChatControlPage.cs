@@ -17,7 +17,7 @@ namespace SampleFunctionBot
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = "chatclient")] HttpRequest req)
         {
 
-            return (ActionResult) new FileStreamResult(File.OpenRead("ServeContent/index.html"), "text/html");
+            return (ActionResult) new FileStreamResult(File.OpenRead(Environment.GetEnvironmentVariable("indexFile")), "text /html");
 
         }
     }

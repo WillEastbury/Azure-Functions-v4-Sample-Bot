@@ -38,15 +38,15 @@ namespace SampleFunctionBot
             ));
 
             builder.Services.AddSingleton<IBotFrameworkHttpAdapter>(e => BindToAdapter(e));
+            builder.Services.AddSingleton<IStorage>(e=> new MemoryStorage());
+            //builder.Services.AddSingleton<IStorage>(e => new CosmosDbStorage(
+            //new CosmosDbStorageOptions()
+            //{   CosmosDBEndpoint = new Uri(Environment.GetEnvironmentVariable("CosmosDBEndpoint")),
+            //    AuthKey = Environment.GetEnvironmentVariable("CosmosAuthKey"),
+            //    CollectionId = Environment.GetEnvironmentVariable("CosmosCollectionId"),
+            //    DatabaseId = Environment.GetEnvironmentVariable("CosmosDatabaseId"),
 
-            builder.Services.AddSingleton<IStorage>(e => new CosmosDbStorage(
-            new CosmosDbStorageOptions()
-            {   CosmosDBEndpoint = new Uri(Environment.GetEnvironmentVariable("CosmosDBEndpoint")),
-                AuthKey = Environment.GetEnvironmentVariable("CosmosAuthKey"),
-                CollectionId = Environment.GetEnvironmentVariable("CosmosCollectionId"),
-                DatabaseId = Environment.GetEnvironmentVariable("CosmosDatabaseId"),
-
-            }));
+            //}));
 
             builder.Services.AddSingleton<GameData>(e => JsonConvert.DeserializeObject<GameData>(File.ReadAllText(Environment.GetEnvironmentVariable("GameFile"))));
 
@@ -59,7 +59,7 @@ namespace SampleFunctionBot
             builder.Services.AddTransient<IBot>(e => new GameBot(
                 e.GetService<ConversationState>(), 
                 e.GetService<GameData>(), 
-                e.GetService<GameSetupDialog>())
+                e.GetService<Dialog>())
                 );
 
         } 
